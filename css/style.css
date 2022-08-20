@@ -1,0 +1,116 @@
+/* Подключение шрифтов */
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,regular,600&display=swap");
+/* Убираю отступы на странице*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Задание шрифта, цвета фона, цвета текста */
+body{
+    font-family: 'Work Sans', sans-serif;
+    background-color: #010208;
+    color: #fff;
+}
+/* Элемент ограничивающий контент с отступами безопасности при сужении экрана 
+ чтобы контент не прилипал к краям*/
+.container {
+    max-width: 1245px; 
+    margin: 0px auto;
+    padding: 0 15px;
+}
+/* Внутренний отступ для шапки сайта */
+.header {
+    padding: 35px 0;
+    position: fixed; /* По размеру экрана*/
+    top: 0;
+    left: 0;
+    right: 0;
+    /* чтобы не отключалось изменение цвета при наведении курсора на шапку сайта,
+    так как шапка сайта выводится позади основной секции (при наведенни курсора
+    мы выделяем не шапку сайта, а основную секцию*/
+    z-index: 5; 
+    background-color: #010208;
+}
+/* Выравнивание и разнесение элементов по разным краям страницы*/
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mehu__list {
+    list-style: none;/* Убираем точки перед текстом */
+    display: flex;
+    align-items: center;
+    gap: 32px;/* Отступ между словами */
+}
+/* Задание стилей для замены цвета слов при наведении мыши */
+.menu__link:hover{
+    background: linear-gradient(99.05deg, #BC3CD8 0.07%, #C54B8C 106.32%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;  Unknown property: 'text-fill-color';
+}
+/* Значок подчеркивания */
+.menu__link:hover::before{
+    opacity: 1; /* Появление значков подчеркивания */
+    visibility: visible;/* Значек видим */
+}
+/* Задание стиля для значка подчеркивания */
+.menu__link {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #E3E4E6;
+    text-decoration: none; /* Отключение подчеркивания текста */
+    position: relative;
+}
+/* Задание стиля для значка подчеркивания через псевдоэлемент  */
+.menu__link::before {
+    content: '';
+    width: 9px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    opacity: 0;/* Значки изначально скрыты */
+    visibility: hidden; /* Значек невидим(прозрачный) */
+}
+/* Выравнивание контента по центру страницы*/
+.hero {
+    height: 100vh; /* Растягивание секции на всю страницу */
+    display: flex;
+    align-items: center; /* Выравнивание контента по центру страницы*/
+    justify-content: center; /* Выравнивание контента по центру страницы*/
+    position: relative;
+}
+/* Задание стилей для первой надписи*/
+.hero__title {
+font-weight: 300;
+font-size: 56px;
+text-align: center;
+line-height: 150%;
+letter-spacing: -0.02em;
+color: rgba(227, 228, 230, 0.55);
+}
+/* Выделение отдельных остов жирным белым цветом*/
+.hero__title span{
+    font-weight: 600;
+    color: #e3e4e6;
+}
+/* Задание стилей для кнопки "стрелочка вниз"*/
+.hero__arrow {
+    border: none;/* Отключение встроенных в браузеров стилей*/
+    width: 40px;
+    height: 40px;
+    background: transparent url('../img/arrow.svg') center center no-repeat;
+    position: absolute;
+    left: 50%;
+    bottom: 42px;
+    transform:  translateX(-50%) rotate(90deg); 
+    cursor: pointer;
+}
